@@ -22,7 +22,6 @@ function string2hash(str) {  // receives a string and returns a hash value for i
 
 function loadDict(hash, onload) {
     if (hash in dict) {
-        console.log('hash ' + hash + ' already in dict');
         onload();
     }
 
@@ -30,8 +29,6 @@ function loadDict(hash, onload) {
     script.onload = onload;
     script.src = 'data/' + ('00' + hash).slice(-3) + '.js';
     document.head.appendChild(script);
-
-    console.log('loaded dict for hash ' + hash);
 }
 
 function ngrams(word, n) {
@@ -133,7 +130,6 @@ function search(query) {
     trigrams.forEach(function (trigram) {
         var hash = string2hash(trigram) % HASH_SIZE;
         loadDict(hash, function () {
-            console.log(trigram);
             updateSearchResult(dict[hash], query_vec);
             trigrams_to_merge --;
             if (trigrams_to_merge === 0) {
@@ -146,7 +142,6 @@ function search(query) {
 window.onload = function() {
     var query = document.getElementById('query');
     query.addEventListener('input', function () {
-        console.log(this.value);
         search(this.value);
     });
 };
