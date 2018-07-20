@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>enja.kdict.org - 速い英和辞典</title>
     <script src="js/fastdict.js"></script>
+    <style>
+        body { font-family: sans-serif; }
+        h1 { text-align: center; }
+        ul { list-style-type: none; }
+        b.title { color: darkred; }
+        span.def { font-size: 0.9em; color: #333; }
+        div#search { text-align: center; }
+        input#query { font-size: 1.0em; }
+    </style>
 </head>
 <body>
-    <p>fastdict - 速い辞書</p>
-    <input type="text" id="query" />
+    <h1>enja.kdict.org - 速い英和辞典</h1>
+    <div id="search"><input type="text" id="query" autofocus autocomplete="off" placeholder="検索語 (例: hello)"/></div>
     <div>
         <ul id="results">
 

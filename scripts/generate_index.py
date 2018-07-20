@@ -29,13 +29,13 @@ def generate_hash_values(s, hash_size):
 def generate_definition(entry):
     definition = ''
     for pos, text in entry['english'].items():
-        definition += '<b>%s</b> %s' % (pos, text)
+        definition += '<b>%s</b> %s ' % (pos, text)
 
     return definition
 
 
 def main():
-    hash_size = 256
+    hash_size = 512
     entries_dict = defaultdict(list)
     for line in sys.stdin:
         entry = json.loads(line)

@@ -1,5 +1,5 @@
-var HASH_SIZE = 256;
-var NUM_RESULTS = 20;
+var HASH_SIZE = 512;
+var NUM_RESULTS = 15;
 var dict = [];
 var search_result = {};
 var trigrams_to_merge;
@@ -117,7 +117,8 @@ function showSearchResult() {
     for (i = 0; i < results_to_show.length && i < NUM_RESULTS; i ++) {
         li = document.createElement('li');
         result = results_to_show[i];
-        li.innerHTML = result.title + ': ' + result.definition;
+        li.innerHTML = '<b class="title">' + result.title + '</b> '
+            + '<span class="def">' + result.definition + '</span>';
         ul.appendChild(li);
     }
 }
