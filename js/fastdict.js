@@ -42,9 +42,14 @@ function ngrams(word, n) {
 
 function word2vec(word) {
     var vec = {};
+    var unigrams = ngrams(word, 1);
     var bigrams = ngrams(word, 2);
     var trigrams = ngrams(word, 3);
     var _len = 0;
+    unigrams.forEach(function (unigram) {
+        vec[unigram] = (vec[unigram] || 0) + 1;
+        _len ++;
+    });
     bigrams.forEach(function (bigram) {
         vec[bigram] = (vec[bigram] || 0) + 1;
         _len ++;
