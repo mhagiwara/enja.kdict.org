@@ -82,6 +82,7 @@ def main():
     ejdict_file.close()
     wiktionary_file.close()
 
+    print('Total # of words = %d' % len(all_titles))
 
 if __name__ == '__main__':
     main()
