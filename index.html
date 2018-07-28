@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>enja.kdict.org - 速い英和辞典</title>
     <script src="js/fastdict.js"></script>
     <style>
@@ -12,6 +13,13 @@
         span.def { color: #333; }
         div#search, div#footer { text-align: center; }
         input#query { font-size: 1.2em; }
+        @media (max-width: 500px) {
+            h1 { font-size: 6vw; width: 100%; }
+            #search { font-size: 5vw; }
+            #query { width: 90%; padding: 15px; border-radius: 30px; border: 2px solid gray}
+            ul#results { font-size: 5vw; }
+            #footer { font-size: 4vw; }
+        }
     </style>
 </head>
 <body>
